@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hazel Grace C. Guan, CHRA — HR Generalist | Learning &amp; Organizational Development | Employee Engagement</title>
+<meta name="keywords" content="HR Generalist, Human Resources Generalist, Learning and Development, Learning and Organizational Development, Employee Engagement, Talent Acquisition, Full-Cycle Recruitment, Onboarding, Compensation and Benefits, Performance Management, HR Operations, HR Compliance, KPI Framework Development, KSAT, CSR, Corporate Social Responsibility, Multi-Site HR Coordination, HR Automation, Payruler HRIS, Claude AI, ChatGPT, CHRA, Certified Human Resource Associate, Manila, Davao, Cebu, Philippines">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B2A4A;
+    --navy-deep:#0F1830;
+    --gold:#B76E4E;
+    --gold-soft:#E8B4A0;
+    --cream:#FAF7F5;
+    --panel:#FFFFFF;
+    --charcoal:#20222A;
+    --slate:#6B6560;
+    --hairline:#EDE3DE;
+    --sidebar-text:#F2E9E4;
+    --sidebar-sub:#C4AFA8;
+    --green-dark:#1E6B3E;
+    --shadow-sm:0 1px 2px rgba(15,24,48,0.05), 0 2px 6px rgba(15,24,48,0.06);
+    --shadow-md:0 6px 18px rgba(15,24,48,0.10);
+    --radius:10px;
+    --radius-sm:7px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Inter',Arial,sans-serif;
+    color:var(--charcoal);
+    background:var(--cream);
+    font-size:15px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+
+  /* ===== APP SHELL ===== */
+  html, body{height:100%;}
+  .app{display:flex; align-items:stretch; max-width:1480px; margin:0 auto; height:100vh;}
+
+  /* ===== SIDEBAR ===== */
+  .sidebar{
+    width:296px;
+    flex-shrink:0;
+    background:linear-gradient(175deg,var(--navy) 0%,var(--navy-deep) 100%);
+    color:var(--sidebar-text);
+    position:sticky;
+    top:0;
+    height:100vh;
+    overflow-y:auto;
+    padding:34px 26px 26px;
+    display:flex;
+    flex-direction:column;
+    gap:26px;
+    box-shadow:2px 0 12px rgba(15,24,48,0.12);
+  }
+  .side-top{display:flex; gap:13px; align-items:center;}
+  .avatar{
+    width:54px; height:54px; border-radius:50%;
+    background:linear-gradient(135deg,var(--gold) 0%,var(--gold-soft) 100%);
+    color:var(--navy-deep);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Lora',serif; font-weight:700; font-size:19px;
+    flex-shrink:0; overflow:hidden;
+    box-shadow:0 3px 10px rgba(183,110,78,0.35);
+  }
+  .avatar img{width:100%; height:100%; object-fit:cover; display:block;}
+  .side-name{font-family:'Lora',serif; font-weight:700; font-size:17.5px; color:#fff; line-height:1.3; letter-spacing:0.1px;}
+  .side-name .cred{color:var(--gold-soft); font-size:12px; font-weight:700; font-family:'Inter Tight',sans-serif;}
+  .side-title{font-size:11.5px; color:var(--sidebar-sub); margin-top:4px; line-height:1.45; font-weight:500;}
+
+  .side-nav{list-style:none; display:flex; flex-direction:column; gap:2px;}
+  .side-nav-head{font-size:10.5px; text-transform:uppercase; letter-spacing:1.4px; color:var(--sidebar-sub); font-weight:700; margin-bottom:8px; opacity:.7;}
+  .side-nav a{
+    display:flex; align-items:center; gap:10px;
+    padding:10px 12px; border-radius:var(--radius-sm);
+    color:var(--sidebar-sub); text-decoration:none;
+    font-size:13px; font-weight:600;
+    transition:background .15s ease, color .15s ease, transform .1s ease;
+  }
+  .side-nav a .dot{width:5px; height:5px; border-radius:50%; background:currentColor; opacity:.5; flex-shrink:0;}
+  .side-nav a:hover{background:rgba(255,255,255,0.07); color:#fff;}
+  .side-nav a.active{background:var(--gold); color:#fff; box-shadow:0 3px 10px rgba(183,110,78,0.3);}
+  .side-nav a.active .dot{background:#fff; opacity:1;}
+
+  .side-contact{font-size:12px; line-height:2; color:var(--sidebar-text);}
+  .side-contact div span.lbl{color:var(--gold-soft); margin-right:6px; font-weight:700; font-size:10.5px; text-transform:uppercase; letter-spacing:0.4px;}
+  .side-contact a{text-decoration:none;}
+  .side-contact a:hover{color:var(--gold-soft);}
+
+  .side-actions{display:flex; flex-direction:column; gap:9px; margin-top:auto; padding-top:8px;}
+  .btn-side{
+    padding:11px; border-radius:var(--radius-sm); text-align:center;
+    font-size:12.5px; font-weight:700; text-decoration:none;
+    border:none; cursor:pointer; font-family:inherit;
+    transition:opacity .15s ease, transform .1s ease;
+    letter-spacing:0.2px;
+  }
+  .btn-side:hover{opacity:0.9;}
+  .btn-side.primary{background:linear-gradient(135deg,var(--gold-soft) 0%,var(--gold) 100%); color:#fff; box-shadow:0 3px 10px rgba(183,110,78,0.3);}
+  .btn-side.outline{background:transparent; border:1px solid rgba(232,180,160,0.35); color:var(--sidebar-text);}
+
+  .sidebar-mobile-bar{display:none;}
+
+  /* ===== MAIN ===== */
+  .main{flex:1; min-width:0; padding:44px 60px 80px; max-width:980px; height:100vh; overflow-y:auto;}
+
+  .page-head{margin-bottom:10px; padding-bottom:16px; border-bottom:1px solid var(--hairline);}
+  .page-eyebrow{
+    font-family:'Inter Tight',sans-serif; font-size:11.5px; letter-spacing:2px;
+    text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:6px;
+  }
+  .page-title{font-family:'Lora',serif; font-size:27px; font-weight:700; color:var(--navy-deep); letter-spacing:-0.2px; line-height:1.3;}
+
+  /* Tabbed sections: only the active one is shown */
+  .content-section{display:none; padding:4px 0 20px;}
+  .content-section.active{display:block;}
+
+  .summary{font-size:14.5px; color:var(--charcoal); line-height:1.8; max-width:740px; text-align:justify; text-justify:inter-word; hyphens:auto;}
+
+  /* Executive summary highlight box */
+  .exec-box{
+    background:var(--panel);
+    border:1px solid var(--hairline);
+    border-radius:var(--radius);
+    padding:24px 26px;
+    margin-top:22px;
+    box-shadow:var(--shadow-sm);
+    max-width:740px;
+  }
+  .exec-box .exec-head{
+    font-family:'Inter Tight',sans-serif; font-weight:700; font-size:11.5px;
+    text-transform:uppercase; letter-spacing:1.2px; color:var(--navy); margin-bottom:14px;
+  }
+  .exec-list{list-style:none; display:flex; flex-direction:column; gap:12px;}
+  .exec-list li{
+    font-size:13.5px; line-height:1.6; padding-left:28px; position:relative; color:var(--charcoal);
+  }
+  .exec-list li::before{
+    content:"✓";
+    position:absolute; left:0; top:1px;
+    width:18px; height:18px; border-radius:50%;
+    background:var(--green-dark); color:#fff;
+    font-size:10px; font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .exec-list li b{color:var(--navy-deep); font-weight:700;}
+
+  /* ===== JOBS ===== */
+  .employer-block{margin-bottom:22px;}
+  .employer-block:last-child{margin-bottom:0;}
+  .employer-head{
+    display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:6px;
+    margin-bottom:12px;
+  }
+  .employer-name{font-family:'Lora',serif; font-weight:700; font-size:18px; color:var(--navy-deep);}
+  .employer-sub{font-size:12.5px; color:var(--slate); font-style:italic;}
+  .employer-tenure{font-size:11px; font-weight:700; color:var(--gold); letter-spacing:0.3px; white-space:nowrap;}
+
+  .job{
+    background:var(--panel);
+    border:1px solid var(--hairline);
+    border-radius:var(--radius-sm);
+    padding:24px 28px;
+    margin-bottom:16px;
+    box-shadow:var(--shadow-sm);
+  }
+  .job:last-child{margin-bottom:0;}
+  .job-row{display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:6px;}
+  .job-title{font-family:'Lora',serif; font-weight:700; font-size:16.5px; color:var(--navy-deep); letter-spacing:-0.1px;}
+  .job-dates{
+    font-size:11px; font-weight:700; color:var(--gold); letter-spacing:0.4px; white-space:nowrap;
+    text-transform:uppercase;
+  }
+  .job-sub{font-size:12.5px; color:var(--slate); font-style:italic; margin-bottom:14px; padding-bottom:14px; border-bottom:1px solid var(--hairline);}
+  .subhead{
+    font-size:11.5px; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:0.8px;
+    margin:20px 0 10px; padding-bottom:6px; border-bottom:1px solid var(--hairline);
+  }
+  .job > .subhead:first-of-type{margin-top:0;}
+  ul.bullets{list-style:none;}
+  ul.bullets li{font-size:13.2px; padding:4px 0 4px 15px; position:relative; line-height:1.6; color:var(--charcoal);}
+  ul.bullets li::before{content:"–"; position:absolute; left:0; color:var(--slate); font-weight:600;}
+  ul.bullets li b{color:var(--navy-deep);}
+
+  /* ===== PROGRAM CARDS ===== */
+  .prog-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+  @media(max-width:1180px){.prog-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.prog-grid{grid-template-columns:1fr;}}
+  .prog-card{
+    background:var(--panel); border:1px solid var(--hairline); border-left:3px solid var(--gold);
+    border-radius:var(--radius-sm); padding:16px 18px; box-shadow:var(--shadow-sm);
+    transition:box-shadow .15s ease, transform .15s ease;
+  }
+  .prog-card:hover{box-shadow:var(--shadow-md); transform:translateY(-1px);}
+  .prog-card .pname{font-weight:700; font-size:13.5px; color:var(--navy-deep); margin-bottom:4px;}
+  .prog-card .pscore{font-family:'Inter Tight',sans-serif; font-weight:800; color:var(--gold); font-size:14px;}
+  .prog-card .pdesc{font-size:11.5px; color:var(--slate); margin-top:5px; line-height:1.5;}
+
+  .quote-box{
+    background:#FBF1EC; border-left:3px solid var(--gold); padding:16px 20px;
+    font-size:13px; font-style:italic; color:var(--navy-deep); margin-top:20px; border-radius:0 var(--radius-sm) var(--radius-sm) 0; max-width:760px;
+  }
+  .quote-box .att{display:block; font-style:normal; font-size:10.5px; color:var(--slate); margin-top:6px; font-weight:600;}
+
+  /* ===== AI SYSTEMS ===== */
+  .ai-intro{max-width:760px; font-size:14.5px; color:var(--charcoal); line-height:1.8; margin-bottom:22px; text-align:justify; text-justify:inter-word; hyphens:auto;}
+  .ai-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:24px;}
+  @media(max-width:820px){.ai-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.ai-grid{grid-template-columns:1fr;}}
+  .ai-card{
+    background:var(--panel); border:1px solid var(--hairline); border-radius:var(--radius); padding:20px 20px 18px;
+    display:flex; flex-direction:column; gap:8px; box-shadow:var(--shadow-sm);
+    transition:box-shadow .15s ease, transform .15s ease;
+  }
+  .ai-card:hover{box-shadow:var(--shadow-md); transform:translateY(-1px);}
+  .ai-card .ai-icon{
+    width:34px; height:34px; border-radius:8px; background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%); color:var(--gold-soft);
+    display:flex; align-items:center; justify-content:center; font-size:11.5px; font-weight:800; font-family:'Inter Tight',sans-serif;
+  }
+  .ai-card .ai-name{font-family:'Inter Tight',sans-serif; font-weight:700; font-size:14px; color:var(--navy-deep); margin-top:4px;}
+  .ai-card .ai-desc{font-size:12.3px; color:var(--slate); line-height:1.6; flex-grow:1;}
+  .ai-card .ai-impact{
+    font-size:10.5px; font-weight:700; color:var(--green-dark); background:#E4F3E9;
+    padding:5px 10px; border-radius:11px; display:inline-block; width:fit-content;
+  }
+  .ai-note{margin-top:22px; font-size:12px; color:var(--slate); max-width:760px; line-height:1.65; font-style:italic;}
+
+  /* ===== SKILLS / EDU ===== */
+  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:30px;}
+  @media(max-width:640px){.two-col{grid-template-columns:1fr;}}
+  .sb-head{
+    font-family:'Inter Tight',sans-serif; font-size:11.5px; letter-spacing:1.3px; text-transform:uppercase;
+    color:var(--navy); font-weight:700; margin-bottom:12px; padding-bottom:8px; border-bottom:2px solid var(--gold);
+  }
+  .sb-list{list-style:none;}
+  .sb-list li{font-size:13px; padding:6px 0 6px 16px; position:relative; color:var(--charcoal); line-height:1.55;}
+  .sb-list li::before{content:""; position:absolute; left:0; top:13px; width:5px; height:5px; background:var(--gold); border-radius:50%;}
+
+  /* ===== KEYWORD INDEX ===== */
+  .keyword-block{margin-top:30px; padding-top:26px; border-top:1px solid var(--hairline);}
+  .keyword-block .sb-head{margin-bottom:6px; border-bottom:none; padding-bottom:0;}
+  .keyword-intro{font-size:12px; color:var(--slate); margin-bottom:16px; max-width:740px; line-height:1.6;}
+  .keyword-group{margin-bottom:16px;}
+  .keyword-group:last-child{margin-bottom:0;}
+  .keyword-group-label{font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--navy); margin-bottom:8px;}
+  .keyword-tags{display:flex; flex-wrap:wrap; gap:7px;}
+  .keyword-tag{
+    font-size:11.5px; font-weight:600; color:var(--navy-deep);
+    background:#FBF1EC; border:1px solid var(--hairline);
+    padding:5px 11px; border-radius:14px; white-space:nowrap;
+  }
+
+  .sb-edu{margin-bottom:16px; padding:14px 16px; background:var(--panel); border:1px solid var(--hairline); border-radius:var(--radius-sm); box-shadow:var(--shadow-sm);}
+  .sb-edu:last-child{margin-bottom:0;}
+  .sb-edu .school{font-weight:700; font-size:13.5px; color:var(--navy-deep);}
+  .sb-edu .deg{font-size:12px; color:var(--slate); margin-top:3px;}
+  .sb-edu .meta{font-size:11px; color:var(--gold); margin-top:4px; font-weight:700;}
+  .sb-cert{font-size:13px; margin-bottom:12px; padding-left:19px; position:relative;}
+  .sb-cert::before{content:"✓"; position:absolute; left:0; color:var(--gold); font-weight:700; font-size:11px;}
+  .sb-cert .c-title{font-weight:700; color:var(--navy-deep); display:block;}
+  .sb-cert .c-meta{font-size:11px; color:var(--slate);}
+
+  .intern-row{display:flex; gap:12px; margin-bottom:11px; align-items:flex-start;}
+  .intern-row:last-child{margin-bottom:0;}
+  .intern-dot{width:8px; height:8px; border-radius:50%; background:var(--gold); margin-top:5px; flex-shrink:0;}
+  .intern-row .role{font-weight:700; color:var(--navy-deep); font-size:12.5px; display:block;}
+  .intern-row .co{color:var(--slate); font-size:11.5px;}
+
+  /* ===== CONTACT ===== */
+  .contact-card{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);
+    color:var(--sidebar-text); border-radius:var(--radius); padding:38px 40px; margin-top:18px;
+    box-shadow:var(--shadow-md);
+  }
+  .contact-card .page-title{color:#fff;}
+  .contact-card .summary{color:var(--sidebar-sub); max-width:600px;}
+  .contact-buttons{display:flex; gap:12px; flex-wrap:wrap; margin-top:20px;}
+  .btn{display:inline-block; padding:12px 26px; border-radius:var(--radius-sm); font-weight:700; font-size:13px; text-decoration:none; letter-spacing:0.3px; transition:opacity .15s ease;}
+  .btn:hover{opacity:0.9;}
+  .btn-primary{background:linear-gradient(135deg,var(--gold-soft) 0%,var(--gold) 100%); color:#fff; box-shadow:0 4px 12px rgba(183,110,78,0.3);}
+  .btn-outline{border:1px solid rgba(232,180,160,0.45); color:var(--sidebar-text);}
+
+  .footer-note{text-align:center; font-size:11px; color:var(--slate); padding:24px 20px 6px; letter-spacing:0.3px;}
+
+  /* ===== MOBILE ===== */
+  @media(max-width:900px){
+    .app{flex-direction:column; height:auto;}
+    .sidebar{
+      position:sticky; top:0; z-index:60; width:100%; height:auto;
+      flex-direction:row; flex-wrap:wrap; padding:14px 20px; gap:14px;
+    }
+    .side-top{flex:1;}
+    .side-nav-wrap, .side-contact, .side-actions{
+      display:none; width:100%;
+    }
+    .sidebar.open .side-nav-wrap,
+    .sidebar.open .side-contact,
+    .sidebar.open .side-actions{display:flex; flex-direction:column;}
+    .sidebar-mobile-bar{
+      display:flex; align-items:center; justify-content:center;
+      width:38px; height:38px; border-radius:8px;
+      background:rgba(255,255,255,0.08); color:#fff; font-size:18px;
+      border:none; cursor:pointer; flex-shrink:0;
+    }
+    .main{padding:28px 22px 60px; height:auto; overflow-y:visible; max-width:none;}
+  }
+
+  @media print{
+    .sidebar-mobile-bar, .btn-side, .side-actions{display:none !important;}
+    .sidebar{position:static; height:auto; width:100%;}
+    .app{flex-direction:column; height:auto;}
+    .main{max-width:none; padding:0 20px; height:auto; overflow:visible;}
+    .content-section{display:block !important; padding:16px 0;}
+    body{background:#fff;}
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="side-top">
+      <div class="avatar"><img src="1750733738223.jpg" alt="Hazel Grace C. Guan"></div>
+      <div>
+        <div class="side-name">Hazel Grace C. Guan <span class="cred">CHRA</span></div>
+        <div class="side-title">HR Generalist — Learning &amp; Organizational Development | Employee Engagement</div>
+      </div>
+      <button class="sidebar-mobile-bar" id="sidebarToggle" aria-label="Menu">☰</button>
+    </div>
+
+    <div class="side-nav-wrap">
+      <div class="side-nav-head">Navigate Profile</div>
+      <ul class="side-nav" id="sideNav">
+        <li><a href="#overview"><span class="dot"></span>Overview</a></li>
+        <li><a href="#experience"><span class="dot"></span>Experience</a></li>
+        <li><a href="#programs"><span class="dot"></span>Programs Led</a></li>
+        <li><a href="#ai-systems"><span class="dot"></span>AI Systems</a></li>
+        <li><a href="#skills"><span class="dot"></span>Skills &amp; Tools</a></li>
+        <li><a href="#education"><span class="dot"></span>Education</a></li>
+        <li><a href="#contact"><span class="dot"></span>Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="side-contact">
+      <div><span class="lbl">Tel</span>0919-529-2588</div>
+      <div><span class="lbl">Mail</span><a href="mailto:hgraceguan@gmail.com">hgraceguan@gmail.com</a></div>
+      <div><span class="lbl">In</span><a href="https://bit.ly/LinkedInHazelGuan" target="_blank" rel="noopener">LinkedIn Profile</a></div>
+      <div><span class="lbl">Loc</span>Metro Manila, PH</div>
+    </div>
+
+    <div class="side-actions">
+      <a class="btn-side primary" href="mailto:hgraceguan@gmail.com">Email Hazel Grace Guan</a>
+      <button class="btn-side outline" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- OVERVIEW -->
+    <section class="content-section active" id="overview">
+      <div class="page-head">
+        <div class="page-eyebrow">Overview</div>
+        <div class="page-title">Results-driven, AI-forward HR Generalist</div>
+      </div>
+      <div class="summary">
+        Results-driven HR Generalist with 4+ years of experience at Infosoft Consulting Corporation —
+        first across all HR facets (2022–2024), then specializing in Learning &amp; Organizational
+        Development and Employee Engagement (2025–present) across a multi-site, multi-entity structure
+        spanning Manila, Davao, and Cebu. Proven track record designing and delivering end-to-end engagement
+        programs that consistently exceed satisfaction targets, alongside recruitment, KPI framework
+        development, and CSR partnership management. Adept at leading independently under minimal
+        supervision while coordinating diverse stakeholders — from frontline employees to executive
+        committees — and an early, hands-on adopter of AI-enhanced HR workflows, having designed and
+        deployed a set of Claude-powered generator tools that now handle routine employment
+        documentation, evaluations, and event registration.
+      </div>
+
+      <div class="exec-box">
+        <div class="exec-head">At a Glance — Key Highlights for Reviewers</div>
+        <ul class="exec-list">
+          <li><b>4+ years</b> at Infosoft Consulting Corporation — full-scope HR Generalist (2022–2024), then specialized in Learning &amp; Organizational Development and Employee Engagement (2025–present) across Manila, Davao, and Cebu.</li>
+          <li>Delivers <b>30+ engagement sessions/events per year</b> at a <b>9.02/10</b> average satisfaction rating — every flagship program above target.</li>
+          <li>Contributed to company-wide attrition reduction from <b>26.6% (2022) to 8.3% (mid-2024)</b> through onboarding redesign and BU-fit placement.</li>
+          <li>Designed and maintains <b>9 Claude-powered HR generator tools</b> spanning employment documentation, learning &amp; assessment, and engagement &amp; recognition (see AI Systems) that cut routine documentation time.</li>
+          <li>Certified Human Resource Associate (CHRA) — current and valid since Nov 2023.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="content-section" id="experience">
+      <div class="page-head">
+        <div class="page-eyebrow">Career</div>
+        <div class="page-title">Professional Experience</div>
+      </div>
+
+      <div class="employer-block" style="margin-top:18px;">
+        <div class="employer-head">
+          <div>
+            <div class="employer-name">Infosoft Consulting Corporation</div>
+            <div class="employer-sub">IT Consulting Industry · Mandaluyong City</div>
+          </div>
+          <div class="employer-tenure">AUG 2022 – PRESENT</div>
+        </div>
+
+        <div class="job">
+          <div class="job-row">
+            <span class="job-title">HR Generalist — Learning &amp; Organizational Development | Employee Engagement</span>
+            <span class="job-dates">JAN 2025 – PRESENT</span>
+          </div>
+          <div class="job-sub">Reassigned from a full-facet generalist role to specialize in Learning &amp; Organizational Development and Employee Engagement.</div>
+
+          <div class="subhead">Employee Engagement Program Leadership</div>
+          <ul class="bullets">
+            <li>Conceptualize, organize, and deliver <b>6 flagship engagement programs</b> generating 30+ sessions/events annually, achieving a <b>9.02/10</b> average satisfaction rating — every program above the 8.0 target.</li>
+            <li>Led end-to-end coordination of annual company outings across <b>three international destinations</b> (Malaysia, Taiwan &amp; Hong Kong) for up to 139 participants, plus local outings and events — managing vendor relationships, executive budget proposals, and multi-site departure logistics.</li>
+            <li>Facilitated <b>Brew &amp; Boardroom</b> leadership-employee sessions achieving a 100% connection rating, and co-facilitated hybrid, tri-site company Townhalls.</li>
+            <li>Manage the employee recognition calendar (birthdays, anniversaries, milestones) and holiday communications across all group companies.</li>
+            <li>Currently managing <b>Wellness Move Season 2</b>, a Strava-based fitness challenge (Stride &amp; Ride categories, running through September 2026) across six employee groups — including weekly tracker updates and leaderboard dashboard verification — building on the 161-participant, 116.5%-of-goal <b>Wellness Run — Season 1</b> challenge.</li>
+            <li>Continue to originate and host <b>Tara, Kape!</b> (since October 2022) as a virtual engagement meetup for employees across Luzon, Visayas, and Mindanao — now at 8 episodes.</li>
+            <li>Manage <b>Learn IT</b>, a long-standing CSR activity to help children be digitally literate, for Grades 4–6 at Nicanor Ibuna Elementary School.</li>
+            <li>Coordinated <b>Dumagat: Ride for a Cause</b>, partnering with Dumagat community leaders and a local school to mobilize Manila-based employee volunteers and donations for the Cayabu Mountains community in Tanay, Rizal.</li>
+          </ul>
+
+          <div class="subhead">Learning &amp; Organizational Development</div>
+          <ul class="bullets">
+            <li>Co-facilitated <b>KPI framework development</b> for Accounting, Sales, BA Consultant, Software Developer, and Business Application Designer departments — testing and recommending adjustments to the rating scale, presenting the framework, and orienting employees on how it works, while serving as lead minutes-taker and metrics documentation owner across stakeholder consultation sessions.</li>
+            <li>Processed and updated competency score assessments for employees across Business Units, supporting competency tracking and development planning within the Learning &amp; Organizational Development/Employee Engagement portfolio.</li>
+            <li>Deliver onboarding orientation and Payruler HRIS training for new hires; standardized the HR Orientation presentation deck company-wide.</li>
+            <li>Co-facilitate the Acceltech Sync Up Training Program.</li>
+          </ul>
+
+          <div class="subhead">AI-Powered HR Systems &amp; Communications</div>
+          <ul class="bullets">
+            <li>Designed and now maintain a suite of <b>9 Claude AI</b> generator tools covering employment documentation, learning &amp; assessment, and engagement &amp; recognition (see AI Systems) — cutting routine task time by an estimated <b>75%</b> and recovering roughly one workday per week for strategic planning.</li>
+            <li>Launched <b>Inside Insights</b>, a recurring employee-engagement content series distilling need-to-know workplace information, and continue producing infographic and policy communication materials on safety, wellness, and compliance topics.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-row">
+            <span class="job-title">HR Generalist — All Facets</span>
+            <span class="job-dates">AUG 2022 – DEC 2024</span>
+          </div>
+          <div class="job-sub">Full-scope HR Generalist covering recruitment, operations, compliance, and CSR across group companies before specializing in Learning &amp; Organizational Development/Employee Engagement.</div>
+
+          <div class="subhead">Recruitment &amp; Talent Acquisition</div>
+          <ul class="bullets">
+            <li>Managed end-to-end recruitment for technical and non-technical roles — requisition, sourcing, screening, interviewing, and offer negotiation.</li>
+            <li>Contributed to company-wide retention gains: attrition fell from <b>26.6% (2022) to 21% (2023) to 8.3% (mid-2024)</b>, supported by strategic BU-fit placement and a redesigned onboarding process.</li>
+            <li>Assisted in redesigning the Employee Referral Program from a flat ₱10,000 bonus to a qualification-tiered structure (₱5,000–₱15,000), cutting recruitment spend from ₱325,000 to ₱91,000 while phasing out paid headhunters.</li>
+            <li>Supported recruitment for supervisory and managerial positions during leadership transitions; represented the company at a Pasig City job fair.</li>
+          </ul>
+
+          <div class="subhead">Onboarding &amp; Employee Records Administration</div>
+          <ul class="bullets">
+            <li>Delivered new-hire onboarding and orientation, Payruler HRIS training, and 201-file documentation for incoming employees across all group companies.</li>
+            <li>Oversaw probationary monitoring and regularization tracking, coordinating with department heads on evaluation timelines and outcomes.</li>
+          </ul>
+
+          <div class="subhead">Compensation, Benefits &amp; Timekeeping</div>
+          <ul class="bullets">
+            <li>Oversaw manual timekeeping and attendance-to-pay validation across group companies.</li>
+            <li>Supported compensation actions (merit increases, promotions, adjustments) and benefits administration, including government-mandated contributions and enrollment.</li>
+          </ul>
+
+          <div class="subhead">Performance Management</div>
+          <ul class="bullets">
+            <li>Coordinated the company-wide performance appraisal cycle — tracking submission timelines, consolidating ratings, and preparing summary reports for management review.</li>
+          </ul>
+
+          <div class="subhead">HR Operations, Compliance &amp; CSR</div>
+          <ul class="bullets">
+            <li>Administered policy implementation and compliance monitoring across group companies (ICC, Acceltech, KTI, DBTPI).</li>
+            <li>Provided early support for employee engagement initiatives — recognition calendar and holiday communications — laying the groundwork for the dedicated Learning &amp; Organizational Development/Employee Engagement mandate assumed in 2025.</li>
+          </ul>
+
+          <div class="subhead">Administrative &amp; Logistics Support</div>
+          <ul class="bullets">
+            <li>Coordinated flight and hotel bookings, shuttle service arrangements, and conference room scheduling for company travel, meetings, and events.</li>
+            <li>Maintained and updated employee records across group companies.</li>
+            <li>Processed travel documentation, coordinated office supplies procurement and vendor arrangements, and handled petty cash disbursement and liquidation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="employer-block">
+        <div class="employer-head">
+          <div>
+            <div class="employer-name">VST ECS Phils., Inc.</div>
+            <div class="employer-sub">Leading ICT Distributor · Pasig City</div>
+          </div>
+          <div class="employer-tenure">MAY 2025 – JUL 2025</div>
+        </div>
+        <div class="job">
+          <div class="job-row">
+            <span class="job-title">HR Executive — Recruitment (Interim)</span>
+          </div>
+          <ul class="bullets">
+            <li>Acted as recruitment partner to 11 Business Units, managing full-cycle recruitment, onboarding, and 201-file/ISO compliance during a short interim engagement, then returned to Infosoft — resuming full ownership of the Learning &amp; Organizational Development/Employee Engagement portfolio without disruption to program continuity.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section class="content-section" id="programs">
+      <div class="page-head">
+        <div class="page-eyebrow">2025–2026 Performance · Annual Programs</div>
+        <div class="page-title">Key Programs Led</div>
+      </div>
+      <div class="ai-note" style="margin:10px 0 16px;">Scores shown are 2025–2026 satisfaction results where a survey applies; programs without a survey score show reach and impact metrics instead.</div>
+
+      <div class="subhead" style="margin-top:6px;">Employee Engagement Programs</div>
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="pname">Tara, Kape! <span class="pscore">9.36</span></div>
+          <div class="pdesc">Quarterly engagement series · since Oct 2022 · 8 episodes to date · ~140 avg. participants</div>
+        </div>
+        <div class="prog-card">
+          <div class="pname">Wellness Talk Series <span class="pscore">9.39</span></div>
+          <div class="pdesc">Health &amp; wellbeing workshops · Manila/Davao/Cebu · 103 avg. participants</div>
+        </div>
+        <div class="prog-card">
+          <div class="pname">Brew &amp; Boardroom <span class="pscore">9.18</span></div>
+          <div class="pdesc">Executive-employee connection series · 6 sessions · 100% connection rating</div>
+        </div>
+        <div class="prog-card">
+          <div class="pname">Company Townhall <span class="pscore">9.07</span></div>
+          <div class="pdesc">Tri-site hybrid townhall · 94.8% rated 8+</div>
+        </div>
+        <div class="prog-card">
+          <div class="pname">Company Outing <span class="pscore">8.28</span></div>
+          <div class="pdesc">Annual trip · Malaysia, Taiwan &amp; Hong Kong + local outings and events</div>
+        </div>
+        <div class="prog-card">
+          <div class="pname">Year-End Party <span class="pscore">8.86</span></div>
+          <div class="pdesc">Annual flagship celebration · 3 sites · 198 employees, 60% response rate</div>
+        </div>
+        <div class="prog-card">
+          <div class="pname">Wellness Run — Season 1 <span class="pscore">9.6</span></div>
+          <div class="pdesc">2026 Q1 fitness challenge · 161 participants · 116.5% of 25,000 KM goal</div>
+        </div>
+        <div class="prog-card">
+          <div class="pname">Wellness Move — Season 2</div>
+          <div class="pdesc">Strava-based challenge · Stride &amp; Ride categories · 6 employee groups · running through Sep 2026</div>
+        </div>
+        <div class="prog-card">
+          <div class="pname">Badminton Smash Night</div>
+          <div class="pdesc">Employee sports &amp; team-building night · quarterly since 2026 · badminton tournament format</div>
+        </div>
+        <div class="prog-card">
+          <div class="pname">HR Talk</div>
+          <div class="pdesc">Monthly HR knowledge-sharing series · monthly since 2026 · Manila/Cebu/Davao · coffee-themed format for real workplace scenarios and skill-sharing among HR professionals</div>
+        </div>
+      </div>
+
+      <div class="subhead">CSR &amp; Community Programs</div>
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="pname">Learn IT</div>
+          <div class="pdesc">CSR activity to help children be digitally literate · Grades 4–6, Nicanor Ibuna Elementary School · long-standing program, currently managed by Hazel</div>
+        </div>
+        <div class="prog-card">
+          <div class="pname">Dumagat: Ride for a Cause</div>
+          <div class="pdesc">CSR bike ride &amp; donation drive · partnered with Dumagat community leaders and a local school · Cayabu Mountains, Tanay, Rizal</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI SYSTEMS -->
+    <section class="content-section" id="ai-systems">
+      <div class="page-head">
+        <div class="page-eyebrow">AI-Powered HR Innovation</div>
+        <div class="page-title">HR Systems Built &amp; Deployed with Claude</div>
+      </div>
+      <div class="ai-intro" style="margin-top:10px;">
+        Most of the processes below used to be prepared manually — drafting each document, form, or report
+        from scratch every time a request came in. Using Claude AI coding, I've since automated the bulk of
+        this work into a set of generator tools that take recurring HR documentation, evaluations, and
+        program logistics off my plate, turning what used to be manual drafting time into instant, consistent,
+        on-brand output.
+      </div>
+      <div class="subhead" style="margin-top:6px;">Employment Documentation</div>
+      <div class="ai-grid">
+        <div class="ai-card">
+          <div class="ai-icon">ATD</div>
+          <div class="ai-name">ATD Generator</div>
+          <div class="ai-desc">Generates Authorization to Deduct forms on demand — standardizing payroll deduction paperwork with consistent formatting and required fields.</div>
+          <span class="ai-impact">Instant, standardized output</span>
+        </div>
+        <div class="ai-card">
+          <div class="ai-icon">COE</div>
+          <div class="ai-name">COE Generator</div>
+          <div class="ai-desc">Produces Certificate of Employment documents for employee requests, replacing manual drafting with a consistent, ready-to-sign template.</div>
+          <span class="ai-impact">Same-day turnaround</span>
+        </div>
+      </div>
+
+      <div class="subhead">Learning &amp; Assessment</div>
+      <div class="ai-grid">
+        <div class="ai-card">
+          <div class="ai-icon">PA</div>
+          <div class="ai-name">Performance Appraisal Rating Sheet</div>
+          <div class="ai-desc">Self-contained interactive evaluation tool for Consulting and Technical Services roles (up to 105 indicators), with auto-calculated weighted scoring, signatures, and export — no setup required.</div>
+          <span class="ai-impact">5 role tracks, auto-scored</span>
+        </div>
+        <div class="ai-card">
+          <div class="ai-icon">TE</div>
+          <div class="ai-name">Training Evaluation Form Sheet</div>
+          <div class="ai-desc">Built for the Training and Solutions Department — a standardized evaluation form for capturing participant feedback and scoring across training sessions.</div>
+          <span class="ai-impact">Standardized training feedback</span>
+        </div>
+        <div class="ai-card">
+          <div class="ai-icon">OE</div>
+          <div class="ai-name">HR Onboarding Orientation Live Examination</div>
+          <div class="ai-desc">Interactive live examination administered during onboarding orientation to check new hires' understanding of company policies, HRIS, and essentials in real time.</div>
+          <span class="ai-impact">Real-time onboarding comprehension check</span>
+        </div>
+        <div class="ai-card">
+          <div class="ai-icon">KS</div>
+          <div class="ai-name">KSAT Analysis Generator</div>
+          <div class="ai-desc">Processes and analyzes Knowledge, Skills, and Attitude (KSAT) competency scores across Business Units, generating consolidated reports for competency tracking and development planning.</div>
+          <span class="ai-impact">Automated competency reporting</span>
+        </div>
+        <div class="ai-card">
+          <div class="ai-icon">TC</div>
+          <div class="ai-name">Training Certificates Generator</div>
+          <div class="ai-desc">Generates completion certificates for training sessions and programs, replacing manual certificate design and printing with a consistent, ready-to-issue template.</div>
+          <span class="ai-impact">Instant certificate issuance</span>
+        </div>
+      </div>
+
+      <div class="subhead">Engagement &amp; Recognition</div>
+      <div class="ai-grid">
+        <div class="ai-card">
+          <div class="ai-icon">RF</div>
+          <div class="ai-name">Registration Forms</div>
+          <div class="ai-desc">Builds sign-up and registration forms for engagement programs and events, streamlining participant intake across sites.</div>
+          <span class="ai-impact">Faster event sign-ups</span>
+        </div>
+        <div class="ai-card">
+          <div class="ai-icon">CP</div>
+          <div class="ai-name">Certificates of Participation &amp; Appreciation Generator</div>
+          <div class="ai-desc">Produces certificates of participation and appreciation for employee activities and events, standardizing recognition materials across programs.</div>
+          <span class="ai-impact">Standardized event recognition</span>
+        </div>
+      </div>
+      <div class="ai-note">
+        All tools above were previously manual, repeated-from-scratch processes — each now scoped, coded, tested,
+        and actively maintained by Hazel using Claude AI, reflecting hands-on fluency in prompting, workflow
+        automation, and applied AI adoption within an HR operations context.
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="content-section" id="skills">
+      <div class="page-head">
+        <div class="page-eyebrow">Capabilities</div>
+        <div class="page-title">Skills &amp; Tools</div>
+      </div>
+      <div class="two-col" style="margin-top:16px;">
+        <div>
+          <div class="sb-head">Core Skills</div>
+          <ul class="sb-list">
+            <li>Employee Engagement Program Design</li>
+            <li>Multi-Site HR Coordination</li>
+            <li>Full-Cycle Recruitment &amp; Negotiation</li>
+            <li>KPI Framework Development</li>
+            <li>Event Coordination &amp; Logistics</li>
+            <li>Vendor &amp; Budget Management</li>
+            <li>Stakeholder Facilitation</li>
+            <li>AI Workflow Design &amp; Task Automation (Claude, ChatGPT)</li>
+            <li>Survey Design &amp; Data Reporting</li>
+          </ul>
+        </div>
+        <div>
+          <div class="sb-head">Software &amp; Tools</div>
+          <ul class="sb-list">
+            <li>Payruler HRIS · Adrenalin MAX · Oracle</li>
+            <li>Acumatica · Solver · Honeywell</li>
+            <li>Claude AI (Cowork automation suite) &amp; ChatGPT</li>
+            <li>GitHub &amp; Google Apps Script</li>
+            <li>MS Office Suite &amp; Canva</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="keyword-block">
+        <div class="sb-head">Keyword Index</div>
+        <div class="keyword-intro">Searchable terms for recruiter Boolean/ATS queries (e.g., "HR Generalist" AND "Employee Engagement" AND "Learning and Development").</div>
+
+        <div class="keyword-group">
+          <div class="keyword-group-label">Roles &amp; Functions</div>
+          <div class="keyword-tags">
+            <span class="keyword-tag">HR Generalist</span>
+            <span class="keyword-tag">Human Resources Generalist</span>
+            <span class="keyword-tag">Learning and Development</span>
+            <span class="keyword-tag">Learning &amp; Organizational Development</span>
+            <span class="keyword-tag">L&amp;OD</span>
+            <span class="keyword-tag">Employee Engagement</span>
+            <span class="keyword-tag">Talent Acquisition</span>
+            <span class="keyword-tag">Full-Cycle Recruitment</span>
+            <span class="keyword-tag">Recruitment Specialist</span>
+            <span class="keyword-tag">Onboarding</span>
+            <span class="keyword-tag">Employee Records Administration</span>
+            <span class="keyword-tag">Compensation and Benefits</span>
+            <span class="keyword-tag">Performance Management</span>
+            <span class="keyword-tag">HR Operations</span>
+            <span class="keyword-tag">HR Compliance</span>
+            <span class="keyword-tag">Timekeeping</span>
+            <span class="keyword-tag">KPI Framework Development</span>
+            <span class="keyword-tag">Competency Assessment</span>
+            <span class="keyword-tag">KSAT</span>
+            <span class="keyword-tag">CSR</span>
+            <span class="keyword-tag">Corporate Social Responsibility</span>
+            <span class="keyword-tag">Multi-Site HR Coordination</span>
+            <span class="keyword-tag">Stakeholder Management</span>
+            <span class="keyword-tag">Vendor Management</span>
+            <span class="keyword-tag">Event Coordination</span>
+            <span class="keyword-tag">Survey Design &amp; Data Reporting</span>
+            <span class="keyword-tag">HR Automation</span>
+            <span class="keyword-tag">AI Workflow Design</span>
+            <span class="keyword-tag">Administrative Support</span>
+            <span class="keyword-tag">Travel Coordination</span>
+            <span class="keyword-tag">Petty Cash Management</span>
+          </div>
+        </div>
+
+        <div class="keyword-group">
+          <div class="keyword-group-label">Tools &amp; Systems</div>
+          <div class="keyword-tags">
+            <span class="keyword-tag">Payruler HRIS</span>
+            <span class="keyword-tag">Adrenalin MAX</span>
+            <span class="keyword-tag">Oracle</span>
+            <span class="keyword-tag">Acumatica</span>
+            <span class="keyword-tag">Solver</span>
+            <span class="keyword-tag">Honeywell</span>
+            <span class="keyword-tag">Claude AI</span>
+            <span class="keyword-tag">ChatGPT</span>
+            <span class="keyword-tag">GitHub</span>
+            <span class="keyword-tag">Google Apps Script</span>
+            <span class="keyword-tag">MS Office Suite</span>
+            <span class="keyword-tag">Canva</span>
+          </div>
+        </div>
+
+        <div class="keyword-group">
+          <div class="keyword-group-label">Certifications &amp; Education</div>
+          <div class="keyword-tags">
+            <span class="keyword-tag">CHRA</span>
+            <span class="keyword-tag">Certified Human Resource Associate</span>
+            <span class="keyword-tag">Mental Health First Aid Certified</span>
+            <span class="keyword-tag">B.S. Psychology</span>
+            <span class="keyword-tag">Polytechnic University of the Philippines</span>
+          </div>
+        </div>
+
+        <div class="keyword-group">
+          <div class="keyword-group-label">Locations &amp; Industry</div>
+          <div class="keyword-tags">
+            <span class="keyword-tag">Metro Manila</span>
+            <span class="keyword-tag">Manila</span>
+            <span class="keyword-tag">Davao</span>
+            <span class="keyword-tag">Cebu</span>
+            <span class="keyword-tag">Philippines</span>
+            <span class="keyword-tag">Mandaluyong City</span>
+            <span class="keyword-tag">Pasig City</span>
+            <span class="keyword-tag">IT Consulting</span>
+            <span class="keyword-tag">ICT Distribution</span>
+            <span class="keyword-tag">Multi-Entity HR</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="content-section" id="education">
+      <div class="page-head">
+        <div class="page-eyebrow">Background</div>
+        <div class="page-title">Education &amp; Certifications</div>
+      </div>
+      <div class="two-col" style="margin-top:16px;">
+        <div>
+          <div class="sb-head">Education</div>
+          <div class="sb-edu">
+            <div class="school">Polytechnic University of the Philippines</div>
+            <div class="deg">B.S. Psychology · Sta. Mesa, Manila</div>
+            <div class="meta">Consistent President's Lister · GWA 1.17</div>
+          </div>
+          <div class="sb-edu">
+            <div class="school">San Ildefonso College</div>
+            <div class="deg">Humanities &amp; Social Sciences · Tanay, Rizal</div>
+            <div class="meta">With Highest Honors · GWA 98</div>
+          </div>
+
+          <div class="sb-head" style="margin-top:22px;">Networking &amp; Training</div>
+          <ul class="sb-list">
+            <li>People Ignite's Future Fest (2023)</li>
+            <li>LahatJobs HR Forum (2023)</li>
+          </ul>
+        </div>
+        <div>
+          <div class="sb-head">Certifications</div>
+          <div class="sb-cert">
+            <span class="c-title">Certified Human Resource Associate</span>
+            <span class="c-meta">HR Educators' Assoc. of the Phils. · Nov 2023, current &amp; valid</span>
+          </div>
+          <div class="sb-cert">
+            <span class="c-title">Certified Mental Health First Aid</span>
+            <span class="c-meta">December 2025</span>
+          </div>
+          <div class="sb-cert">
+            <span class="c-title">Sync Up Training — Co-Facilitator</span>
+            <span class="c-meta">December 2025</span>
+          </div>
+
+          <div class="sb-head" style="margin-top:22px;">Internship Exposure</div>
+          <div class="intern-row">
+            <div class="intern-dot"></div>
+            <div>
+              <span class="role">HR Intern, Technical Recruitment</span>
+              <span class="co">Asticom Technology Inc. · May–Jul 2022</span>
+            </div>
+          </div>
+          <div class="intern-row">
+            <div class="intern-dot"></div>
+            <div>
+              <span class="role">HR Intern, High-Volume Recruitment</span>
+              <span class="co">Concentrix · Oct–Dec 2021</span>
+            </div>
+          </div>
+          <div class="intern-row">
+            <div class="intern-dot"></div>
+            <div>
+              <span class="role">HR Admin Intern, Timekeeping</span>
+              <span class="co">Whitehouse Cares Home Care, NYC · Aug–Oct 2021</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="content-section" id="contact">
+      <div class="contact-card">
+        <div class="page-eyebrow" style="color:var(--gold-soft);">Let's Connect</div>
+        <div class="page-title">Open to conversations on HR innovation, Learning &amp; Organizational Development, and engagement strategy</div>
+        <div class="summary" style="margin-top:10px;">
+          Available for collaboration, speaking, or hiring discussions across HR generalist,
+          Learning &amp; Organizational Development, and employee engagement roles.
+        </div>
+        <div class="contact-buttons">
+          <a class="btn btn-primary" href="mailto:hgraceguan@gmail.com">Email Hazel Grace Guan</a>
+          <a class="btn btn-outline" href="https://bit.ly/LinkedInHazelGuan" target="_blank" rel="noopener">View LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-note">Hazel Grace C. Guan, CHRA &nbsp;·&nbsp; References and full program evaluation reports available upon request</div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  // Mobile sidebar toggle
+  var sidebar = document.getElementById('sidebar');
+  var toggle = document.getElementById('sidebarToggle');
+  if(toggle){
+    toggle.addEventListener('click', function(){
+      sidebar.classList.toggle('open');
+    });
+  }
+
+  // Tabbed navigation: clicking a nav link swaps the visible section
+  var sections = document.querySelectorAll('.content-section[id]');
+  var navLinks = document.querySelectorAll('#sideNav a');
+  var mainPanel = document.querySelector('.main');
+
+  function showSection(id){
+    sections.forEach(function(s){
+      s.classList.toggle('active', s.id === id);
+    });
+    navLinks.forEach(function(l){
+      l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+    });
+    if(mainPanel){ mainPanel.scrollTop = 0; }
+  }
+
+  navLinks.forEach(function(link){
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      var id = link.getAttribute('href').replace('#','');
+      showSection(id);
+      sidebar.classList.remove('open');
+      history.replaceState(null, '', '#' + id);
+    });
+  });
+
+  var startId = (location.hash || '#overview').replace('#','');
+  if(!document.getElementById(startId)){ startId = 'overview'; }
+  showSection(startId);
+</script>
+
+</body>
+</html>
